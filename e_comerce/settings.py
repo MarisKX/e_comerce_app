@@ -41,9 +41,11 @@ INSTALLED_APPS = [
 
     'django.contrib.sites',  # Allauth requirement
 
-    'allauth', # Allauth requirement
-    'allauth.account', # Allauth requirement
-    'allauth.socialaccount', # Allauth requirement
+    'allauth',  # Allauth requirement
+    'allauth.account',  # Allauth requirement
+    'allauth.socialaccount',  # Allauth requirement
+
+    'home',
 ]
 
 
@@ -77,7 +79,10 @@ ROOT_URLCONF = 'e_comerce.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates', 'allauth'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
